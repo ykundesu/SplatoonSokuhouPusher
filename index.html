@@ -8,6 +8,7 @@ body {
 font-family: 'M PLUS Rounded 1c', sans-serif;
   background-image: url("SplatoonBack_Black.png");
 }</style>
+<meta charset="utf-8">
 <title>プッシュ通知登録|スプラトゥーン超速報</title>
 <script>async function setting(){
 await Notification.requestPermission();
@@ -15,7 +16,6 @@ navigator.serviceWorker.register('./service-worker.js')
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
 
 }</script>
-<meta charset="utf-8">
 <body><center><font color="white" style="font-size: 30px;">スプラトゥーン超速報<br>プッシュ通知登録</font></center>
 <center><div class="form-check" style="color:white;width: 100%;">
 <input type="checkbox" id="Update"><label for="Update">公式アップデート発表</label><br>
