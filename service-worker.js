@@ -12,8 +12,8 @@ self.addEventListener('push', function (event) {
 		...{
 			title: 'Hello',
 			body: 'Thanks for sending this push msg.',
-			icon: 'https://simple-push-demo.vercel.app/images/logo-192x192.png',
-			badge: 'https://simple-push-demo.vercel.app/images/badge-72x72.png',
+			icon: 'https://splatoonsokuhouimage.web.fc2.com/PushIcon.png',
+			badge: 'https://splatoonsokuhouimage.web.fc2.com/PushIcon.png',
 			tag: 'web-push-study-notification',
 			data: {
 				url: 'https://web.dev/push-notifications-overview/',
