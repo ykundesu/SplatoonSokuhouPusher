@@ -1,0 +1,32 @@
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+body {
+font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-image: url("SplatoonBack_Black.png");
+}</style>
+<title>プッシュ通知登録|スプラトゥーン超速報</title>
+<script>async function setting(){
+await Notification.requestPermission();
+navigator.serviceWorker.register('./service-worker.js')
+var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
+
+}</script>
+<body><center><font color="white" style="font-size: 30px;">スプラトゥーン超速報<br>プッシュ通知登録</font></center>
+<center><div class="form-check" style="color:white;width: 100%;">
+<input type="checkbox" id="Update"><label for="Update">公式アップデート発表</label><br>
+<input type="checkbox" id="UpdateYoutubeVideo"><label for="UpdateYoutubeVideo">公式Youtube動画更新</label><br>
+<input type="checkbox" id="SalmonChangeGear"><label for="SalmonChangeGear">サーモンランギア更新</label><br>
+<input type="checkbox" id="NewSalmonShift"><label for="NewSalmonShift">新サーモンランシフト発表</label><br>
+<input type="checkbox" id="GesoUpdatePickup"><label for="GesoUpdatePickup">ゲソタウンピックアップ更新</label><br>
+<input type="checkbox" id="MorningTweet"><label for="MorningTweet">毎朝のツイート</label><br>
+<input type="checkbox" id="SplatoonQuiz"><label for="SplatoonQuiz">スプラトゥーンクイズ出題</label><br>
+<input type="checkbox" id="GesoUpdateDefault"><label for="GesoUpdateDefault">ゲソタウン通常更新</label><br>
+<input type="checkbox" id="ChangeSchedule"><label for="ChangeSchedule">スケジュール変更</label><br>
+<button onclick="setting();">設定</button>
+</div></center>
+
+</body>
