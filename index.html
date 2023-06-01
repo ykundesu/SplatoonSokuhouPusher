@@ -14,27 +14,17 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 await Notification.requestPermission();
 navigator.serviceWorker.register('./service-worker.js')
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
+var typenames = ""
 var subscription = (await (await navigator.serviceWorker.ready).pushManager.subscribe({ userVisibleOnly: true, applicationServerKey })).toJSON()
-var data = JSON.stringify({ subscription, payload: {
-title: '通知テスト',
-      body: 'どこに行きますか？??',
-      actions: [
-        { title: 'visit Google', action: 'https://google.co.jp/',icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png" },
-        { title: 'visit Mozilla', action: 'https://www.mozilla.org/',icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png" }
-      ],
-      badge:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png",
-      icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png"
-} })
-console.log(data)
+fetch(' https://sssokuhoupusher-1-b0836240.deta.app/', {
+method:'POST',
+body: JSON.stringify({ subscription,typenames:typenames })
+})
 fetch('https://web-push-server-ue7f.vercel.app/api/send', {
   method: 'POST',
   body: JSON.stringify({ subscription, payload: {
 title: '通知テスト',
-      body: 'どこに行きますか？??',
-      actions: [
-        { title: 'visit Google', action: 'https://google.co.jp/',icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png" },
-        { title: 'visit Mozilla', action: 'https://www.mozilla.org/',icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png" }
-      ],
+      body: '通知の設定に成功しました。',
       badge:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png",
       icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png"
 } })
