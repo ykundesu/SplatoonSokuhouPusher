@@ -16,12 +16,14 @@ navigator.serviceWorker.register('./service-worker.js')
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
 var checks = document.getElementsByClassName('checks');
 var objs = [];
-
+console.log("開始")
 for ( i = 0; i < checks.Length; i++) {
+   console.log(checks[i].value+":"+checks[i].checked)
    if ( checks[i].checked === true ) {
        objs.push(checks[i].value)
    }
 }
+console.log("終わり")
 
 var typenames = objs.join(",")
 console.log(typenames)
