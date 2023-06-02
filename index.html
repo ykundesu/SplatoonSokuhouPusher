@@ -11,6 +11,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 <meta charset="utf-8">
 <title>プッシュ通知登録|スプラトゥーン超速報</title>
 <script>async function setting(){
+    document.write("設定中...")
 await Notification.requestPermission();
 navigator.serviceWorker.register('./service-worker.js')
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
@@ -51,7 +52,7 @@ title: '通知テスト',
 <input type="checkbox" class="checks" id="SplatoonQuiz"><label for="SplatoonQuiz">スプラトゥーンクイズ出題</label><br>
 <input type="checkbox" class="checks" id="GesoUpdateDefault"><label for="GesoUpdateDefault">ゲソタウン通常更新</label><br>
 <input type="checkbox" class="checks" id="ChangeSchedule"><label for="ChangeSchedule">スケジュール変更</label><br>
-<button onclick="setting();">設定</button>
+<a href = "#" onclick="setting();">設定</a>
 </div></center>
 
 </body>
