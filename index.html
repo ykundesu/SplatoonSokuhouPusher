@@ -11,12 +11,8 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 <meta charset="utf-8">
 <title>プッシュ通知登録|スプラトゥーン超速報</title>
 <script>async function setting(){
-document.write("a")
-    document.write("i")
 await Notification.requestPermission();
-    document.write("b")
 navigator.serviceWorker.register('./service-worker.js')
-    document.write("c")
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
 var checks = document.getElementsByClassName('checks');
 var objs = [];
@@ -30,20 +26,16 @@ for ( i = 0; i < checks.Length; i++) {
 var typenames = objs.join(",")
 console.log(typenames)
 var subscription = (await (await navigator.serviceWorker.ready).pushManager.subscribe({ userVisibleOnly: true, applicationServerKey })).toJSON()
-fetch(' https://sssokuhoupusher-1-b0836240.deta.app/', {
-method:'POST',
-body: JSON.stringify({ subscription,typenames:typenames })
-})
-fetch('https://web-push-server-ue7f.vercel.app/api/send', {
+fetch('https://web-push-server-ue7f.vercel.app/api/submit', {
   method: 'POST',
-  body: JSON.stringify({ subscription, payload: {
+  body: JSON.stringify({ typenames, subscription, payload: {
 title: '通知テスト',
       body: '通知の設定に成功しました。',
       badge:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png",
       icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png"
 } })
 })
-};setting();</script>
+}</script>
 <body><center><font color="white" style="font-size: 30px;">スプラトゥーン超速報<br>プッシュ通知登録</font></center>
 <center><div class="form-check" style="color:white;width: 100%;">
 <input type="checkbox" class="checks" id="Update"><label for="Update">公式アップデート発表</label><br>
@@ -55,7 +47,7 @@ title: '通知テスト',
 <input type="checkbox" class="checks" id="SplatoonQuiz"><label for="SplatoonQuiz">スプラトゥーンクイズ出題</label><br>
 <input type="checkbox" class="checks" id="GesoUpdateDefault"><label for="GesoUpdateDefault">ゲソタウン通常更新</label><br>
 <input type="checkbox" class="checks" id="ChangeSchedule"><label for="ChangeSchedule">スケジュール変更</label><br>
-<a href = "#" onclick="setting();">設定</a>
+<button onclick="setting();">設定</button>
 </div></center>
 
 </body>
