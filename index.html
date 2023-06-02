@@ -11,9 +11,12 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 <meta charset="utf-8">
 <title>プッシュ通知登録|スプラトゥーン超速報</title>
 <script>async function setting(){
-    document.write("設定中...")
+document.write("a")
+    document.write("i")
 await Notification.requestPermission();
+    document.write("b")
 navigator.serviceWorker.register('./service-worker.js')
+    document.write("c")
 var applicationServerKey = 'BC8ygaVnDFVOM8akuGRXNQhfMAbgUjExGHtx1A7bClqex95gHNQtIv70ULZoZhI2WvjBovXYrouCGJ70jZczpUo'
 var checks = document.getElementsByClassName('checks');
 var objs = [];
