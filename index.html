@@ -26,7 +26,18 @@ for ( i = 0; i < checks.Length; i++) {
 var typenames = objs.join(",")
 console.log(typenames)
 var subscription = (await (await navigator.serviceWorker.ready).pushManager.subscribe({ userVisibleOnly: true, applicationServerKey })).toJSON()
-fetch('https://web-push-server-ue7f.vercel.app/api/submit', {
+
+fetch('https://sssokuhoupusher-1-b0836240.deta.app/', {
+  method: 'POST',
+  body: JSON.stringify({ typenames, subscription, payload: {
+title: '通知テスト',
+      body: '通知の設定に成功しました。',
+      badge:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png",
+      icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png"
+} })
+})
+
+fetch('https://web-push-server-ue7f.vercel.app/api/send', {
   method: 'POST',
   body: JSON.stringify({ typenames, subscription, payload: {
 title: '通知テスト',
