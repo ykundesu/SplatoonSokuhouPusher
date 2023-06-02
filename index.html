@@ -29,8 +29,9 @@ var subscription = (await (await navigator.serviceWorker.ready).pushManager.subs
 
 fetch('https://sssokuhoupusher-1-b0836240.deta.app/', {
   method: 'POST',
+  headers : { "Content-type" :"application/json; charset=utf-8" },
   body: JSON.stringify({ typenames, subscription, payload: {
-title: '通知テスト',
+title: '通知テスト', 
       body: '通知の設定に成功しました。',
       badge:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png",
       icon:"https://splatoonsokuhouimage.web.fc2.com/PushIcon.png"
