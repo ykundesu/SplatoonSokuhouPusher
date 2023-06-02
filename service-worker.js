@@ -16,7 +16,7 @@ self.addEventListener('push', function (event) {
 			badge: 'https://splatoonsokuhouimage.web.fc2.com/PushIcon.png',
 			tag: 'web-push-study-notification',
 			data: {
-				url: 'twitter://user?screen_name=SplatoonSokuhou',
+				url: 'https://twitter.com/SplatoonSokuhou',
 			},
 		}, ...event.data.json()
 	}
